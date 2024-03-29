@@ -7,22 +7,27 @@ import registrationImage from "../public/login.png";
 import { EyeIcon, EyeOffIcon } from "@heroicons/react/solid";
 
 export default function RegisterForm() {
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState(""); // State for role
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!name || !email || !password || !role) {
+    // Check if all fields are filled
+    if (!name || !email || !password) {
       setError("All fields are necessary");
       return;
     }
     try {
-      // Your form submission logic
+      // Your form submission logic goes here
+
+      // If registration is successful, navigate to '/'
+      router.push("/");
     } catch (error) {
       console.error("Error during registration", error);
     }
@@ -59,15 +64,7 @@ export default function RegisterForm() {
                 onChange={(e) => setEmail(e.target.value)}
                 className="border border-gray-300 rounded-md px-3 py-2 w-full"
               />
-              <select
-                value={role}
-                onChange={(e) => setRole(e.target.value)}
-                className="border border-gray-300 rounded-md px-3 py-2 w-full"
-              >
-                <option value="">Select Role</option>
-                <option value="doctor">Doctor</option>
-                <option value="patient">Patient</option>
-              </select>
+              {/* Password Input */}
               <div className="relative">
                 <input
                   onChange={(e) => setPassword(e.target.value)}
@@ -87,17 +84,20 @@ export default function RegisterForm() {
                   )}
                 </button>
               </div>
+              {/* Register Button */}
               <button
                 className="bg-blue-400 text-white py-2 font-bold cursor-pointer rounded-md"
                 type="submit"
               >
                 Register
               </button>
+              {/* Error Message */}
               {error && (
                 <div className="bg-red-500 text-white w-fit text-sm py-1 px-3 rounded-md mt-2">
                   {error}
                 </div>
               )}
+              {/* Link to Login */}
               <Link href="/">
                 Already have an account?{" "}
                 <span className="underline text-blue-600">Login</span>
