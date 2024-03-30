@@ -9,7 +9,7 @@ export default function Dashboard() {
                 <div className="w-1/6 "> 
                     <Navbar/>
                 </div>
-            
+
                 <div className="w-4/5 p-8">
                     <HeroSection/>
                     <UserInfo />
@@ -17,9 +17,6 @@ export default function Dashboard() {
                 </div>
             </div>
         </div>
-        
+
     );
 }
-
-
-
