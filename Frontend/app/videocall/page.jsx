@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import { useState } from 'react';
 import io from 'socket.io-client';
 import { useRouter } from 'next/navigation';
 
@@ -30,13 +30,16 @@ const VideoCallPage = () => {
         }
     };
 
+    const handleBackToDashboard = () => {
+        router.push('/dashboard');
+    };
+
     return (
         <div className="flex flex-col items-center justify-center h-screen">
             <h1 className="mb-4 text-3xl font-semibold">Video Call</h1>
             {!isJoining && (
                 <div className="mb-4">
                     <button onClick={handleJoinClick} className="p-2 text-2xl bg-transparent border border-gray-600 rounded-md text-gray-600 hover:text-gray-800">Join Meeting</button>
-                    <button onClick={handleCreateClick} className="ml-4 p-2 text-2xl bg-transparent border border-gray-600 rounded-md text-gray-600 hover:text-gray-800">Create Meeting</button>
                 </div>
             )}
             {isJoining && (
@@ -51,6 +54,7 @@ const VideoCallPage = () => {
                     <button onClick={handleJoinRoom} className="p-2 text-2xl bg-transparent border border-gray-600 rounded-md text-gray-600 hover:text-gray-800">Join</button>
                 </div>
             )}
+            <button onClick={handleBackToDashboard} className="p-2 text-2xl bg-transparent border border-gray-600 rounded-md text-gray-600 hover:text-gray-800">Back to Home</button>
         </div>
     );
 };

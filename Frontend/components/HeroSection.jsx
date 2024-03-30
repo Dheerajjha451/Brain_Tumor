@@ -5,7 +5,7 @@ export default function HeroSection() {
           Brain Tumor Prediction Project 
         </h1>
         <p className="text-lg mb-8">
-          Our project utilizes <span className="text-green-400 font-semibold">advanced machine learning algorithms</span> to predict brain tumors. It can detect various types of brain tumors, including <span className="text-blue-400 font-semibold">glioma</span>, <span className="text-blue-400 font-semibold">pituitary tumors</span>, and more. If no tumor is detected, it provides a <span className="text-red-400 font-semibold">negative prediction</span>.
+          Our project utilizes <span className="text-green-400 font-semibold">advanced machine learning algorithms</span> to predict brain tumors. It can detect various types of brain tumors, including <span className="text-blue-400 font-semibold">glioma</span>, <span className="text-blue-400 font-semibold">pituitary tumors</span>, and more. If no tumor is detected, it provides a <span className="text-red-400 font-semibold">no tumor</span>.
         </p>
 
       </section>

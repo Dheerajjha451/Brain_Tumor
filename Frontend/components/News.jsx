@@ -1,14 +1,13 @@
 "use client"
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import 'dotenv/config';
-require('dotenv').config();
+
 
 const News = () => {
   const [news, setNews] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
   const [loading, setLoading] = useState(false);
-  const API_KEY = 'cf47b5871b5e4e9cb925242fc564c991';
+  const API_KEY = process.env.API_KEY;
 
   useEffect(() => {
     const fetchNews = async () => {
